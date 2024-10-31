@@ -3,8 +3,10 @@ package com.jodhpurtechies.composelogin.ui.screens.unauthenticated.registration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import com.jodhpurtechies.composelogin.R
@@ -84,7 +86,8 @@ fun RegistrationInputs(
         NormalButton(
             modifier = Modifier.padding(top = AppTheme.dimens.paddingExtraLarge),
             text = stringResource(id = R.string.registration_button_text),
-            onClick = onSubmit
+            onClick = onSubmit,
+            colors = ButtonDefaults.buttonColors(Color(0xFF009951))
         )
 
 

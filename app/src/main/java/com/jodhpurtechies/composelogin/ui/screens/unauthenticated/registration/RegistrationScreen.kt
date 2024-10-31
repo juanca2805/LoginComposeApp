@@ -12,7 +12,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jodhpurtechies.composelogin.R
 import com.jodhpurtechies.composelogin.ui.common.customComposableViews.SmallClickableWithIconAndText
@@ -74,7 +77,11 @@ fun RegistrationScreen(
                     // Heading Registration
                     TitleText(
                         modifier = Modifier.padding(top = AppTheme.dimens.paddingLarge),
-                        text = stringResource(id = R.string.registration_heading_text)
+                        text = stringResource(id = R.string.registration_heading_text),
+                        style = TextStyle(
+                            fontSize = 24.sp, // Cambia este valor al tamaño que desees
+                            textAlign = TextAlign.Center // Centra el texto
+                        )
                     )
 
                     /**

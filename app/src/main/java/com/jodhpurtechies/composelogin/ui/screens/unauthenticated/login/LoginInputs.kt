@@ -1,14 +1,18 @@
 package com.jodhpurtechies.composelogin.ui.screens.unauthenticated.login
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
@@ -72,11 +76,20 @@ fun LoginInputs(
         )
 
         // Login Submit Button
-        NormalButton(
-            modifier = Modifier.padding(top = AppTheme.dimens.paddingLarge),
-            text = stringResource(id = R.string.login_button_text),
-            onClick = onSubmit
-        )
+        Box(
+            modifier = Modifier
+                .fillMaxSize() // Esto asegura que el Box ocupe todo el espacio disponible
+                .padding(top = AppTheme.dimens.paddingLarge),
+            contentAlignment = Alignment.Center // Centra el contenido dentro del Box
+        ) {
+            NormalButton(
+                modifier = Modifier.padding(horizontal = AppTheme.dimens.paddingNormal), // Puedes ajustar el padding horizontal si lo deseas
+                text = stringResource(id = R.string.login_button_text),
+                onClick = onSubmit,
+                colors = ButtonDefaults.buttonColors(Color(0xFF009951)) // Cambia el color aquí
+            )
+        }
+
 
     }
 }

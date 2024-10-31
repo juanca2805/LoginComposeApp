@@ -15,15 +15,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import coil.size.Scale
 import com.jodhpurtechies.composelogin.R
-import com.jodhpurtechies.composelogin.ui.common.customComposableViews.MediumTitleText
 import com.jodhpurtechies.composelogin.ui.common.customComposableViews.TitleText
 import com.jodhpurtechies.composelogin.ui.screens.unauthenticated.login.state.LoginUiEvent
 import com.jodhpurtechies.composelogin.ui.theme.AppTheme
@@ -74,22 +75,16 @@ fun LoginScreen(
                 ) {
 
                     // Heading Jetpack Compose
-                    MediumTitleText(
-                        modifier = Modifier
-                            .padding(top = AppTheme.dimens.paddingLarge)
-                            .fillMaxWidth(),
-                        text = stringResource(id = R.string.jetpack_compose),
-                        textAlign = TextAlign.Center
-                    )
+
 
                     // Login Logo
                     AsyncImage(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(128.dp)
+                            .height(220.dp)
                             .padding(top = AppTheme.dimens.paddingSmall),
                         model = ImageRequest.Builder(LocalContext.current)
-                            .data(data = R.drawable.jetpack_compose_logo)
+                            .data(data = R.drawable.img)
                             .crossfade(enable = true)
                             .scale(Scale.FILL)
                             .build(),
@@ -97,10 +92,23 @@ fun LoginScreen(
                     )
 
                     // Heading Login
-                    TitleText(
-                        modifier = Modifier.padding(top = AppTheme.dimens.paddingLarge),
-                        text = stringResource(id = R.string.login_heading_text)
-                    )
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(top = AppTheme.dimens.paddingLarge),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Top // Ajusta según tus necesidades
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.login_heading_text),
+                            style = TextStyle(
+                                fontSize = 60.sp, // Cambia este valor al tamaño que desees
+                                textAlign = TextAlign.Center
+                            ),
+                            modifier = Modifier.padding(16.dp) // Ajusta el padding según sea necesario
+                        )
+                    }
+
 
                     // Login Inputs Composable
                     LoginInputs(

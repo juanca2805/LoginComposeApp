@@ -21,7 +21,8 @@ import com.jodhpurtechies.composelogin.ui.theme.AppTheme
 fun NormalButton(
     modifier: Modifier = Modifier,
     text: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    colors: Any
 ) {
     Button(
         modifier = modifier

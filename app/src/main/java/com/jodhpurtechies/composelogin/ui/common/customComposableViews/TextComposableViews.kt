@@ -10,7 +10,8 @@ import androidx.compose.ui.text.style.TextAlign
 fun TitleText(
     modifier: Modifier = Modifier,
     text: String,
-    textAlign: TextAlign = TextAlign.Start
+    textAlign: TextAlign = TextAlign.Start,
+    style: Any
 ) {
     Text(
         modifier = modifier,
